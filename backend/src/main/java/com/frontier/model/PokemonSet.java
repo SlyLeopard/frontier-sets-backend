@@ -7,41 +7,46 @@ import lombok.Getter;
 import lombok.Setter;
 
 @AllArgsConstructor
-public class Pokemon {
-
-    @Getter
-    @Setter
-    private String name;
+public class PokemonSet {
 
     @Getter
     @Setter
     private int dex;
+    
+    @Getter
+    @Setter
+    private int hpEv;
 
     @Getter
     @Setter
-    private int hp;
+    private int atkEv;
 
     @Getter
     @Setter
-    private int atk;
+    private int defEv;
 
     @Getter
     @Setter
-    private int def;
+    private int spaEv;
 
     @Getter
     @Setter
-    private int spa;
+    private int spdEv;
 
     @Getter
     @Setter
-    private int spd;
+    private int speEv;
 
     @Getter
     @Setter
-    private int spe;
+    private ArrayList<String> moves;
 
     @Getter
     @Setter
-    private ArrayList<String> types;
+    private String nature;
+
+    @Getter
+    @Setter
+    private String item;
+    
 }
