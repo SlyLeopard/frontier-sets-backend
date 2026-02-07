@@ -1,5 +1,26 @@
 package com.frontier.model;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import lombok.AllArgsConstructor;
+
+@Controller
+@AllArgsConstructor
 public class PokemonSetController {
+
+    private final PokemonSetRepository pokemonSetRepository;
+
+    @GetMapping("/pokemonSetTest")
+    public String getMethodName(@RequestParam String param) {
+        return new String("This is a test of the GET /pokemonSet endpoint");
+    }
+
+    @GetMapping("/pokemonSet/${id}")
+    public String getPokemonSet(@RequestParam String param) {
+        return pokemonSetRepository.getPokemonSetById();
+    }
+
     
 }
