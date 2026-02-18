@@ -1,12 +1,17 @@
 package com.frontier.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.ArrayList;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Data;
 
+@Data
 @AllArgsConstructor
+@Document(collection = "pokemon")
 public class Pokemon {
 
     @Getter
