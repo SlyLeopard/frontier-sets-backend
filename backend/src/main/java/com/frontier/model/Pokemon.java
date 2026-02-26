@@ -49,4 +49,8 @@ public class Pokemon {
     @Getter
     @Setter
     private ArrayList<String> types;
+
+    @Getter
+    @Setter
+    private ArrayList<String> abilities;
 }

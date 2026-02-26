@@ -16,6 +16,10 @@ public class PokemonSet {
 
     @Getter
     @Setter
+    private Pokemon pokemon;
+
+    @Getter
+    @Setter
     private int dex;
     
     @Getter

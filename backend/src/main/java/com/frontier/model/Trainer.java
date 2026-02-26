@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Data
-@Document
+@Document(collection = "trainer")
 public class Trainer {
 
     @Getter
