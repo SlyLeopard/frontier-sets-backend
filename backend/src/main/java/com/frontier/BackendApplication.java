@@ -1,4 +1,4 @@
-package com.frontier.backend;
+package com.frontier;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

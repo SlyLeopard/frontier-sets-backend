@@ -1,6 +1,7 @@
 package com.frontier.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +21,9 @@ public class PokemonController {
         return new String("This is a test of the GET /pokemon endpoint");
     }
 
-    @GetMapping("/pokemon/${id}")
-    public String getPokemon(@RequestParam String param) {
-        return pokemonRepository.getPokemonById();
+    @GetMapping("/pokemon/{id}")
+    public String getPokemon(@PathVariable String id) {
+        return pokemonRepository.getPokemonById(id);
     }
     
     
