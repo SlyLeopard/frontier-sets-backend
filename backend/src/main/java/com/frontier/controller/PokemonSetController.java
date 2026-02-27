@@ -20,7 +20,7 @@ public class PokemonSetController {
         return new String("This is a test of the GET /pokemonSet endpoint");
     }
 
-    @GetMapping("/pokemonSet/${id}")
+    @GetMapping("/pokemonSet/{id}")
     public String getPokemonSet(@PathVariable String id) {
         return pokemonSetRepository.getPokemonSetById(id);
     }

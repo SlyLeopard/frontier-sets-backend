@@ -1,6 +1,7 @@
 package com.frontier.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.frontier.repository.TrainerRepository;
@@ -13,9 +14,9 @@ public class TrainerController {
 
     private final TrainerRepository trainerRepository;
 
-    @GetMapping("/trainerTest")
-    public String getMethodName() {
-        return new String("This is a test of the GET /trainer endpoint");
+    @GetMapping("/trainer/{id}")
+    public String getTrainer(@PathVariable String id) {
+        return trainerRepository.getTrainerById(id);
     }
     
 }
