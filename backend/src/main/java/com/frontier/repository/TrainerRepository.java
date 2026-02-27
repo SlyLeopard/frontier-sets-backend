@@ -1,4 +1,4 @@
-package com.frontier.model;
+package com.frontier.repository;
 
 import org.springframework.stereotype.Repository;
 
