@@ -1,0 +1,482 @@
+[
+    {
+        "index": "001",
+        "trainerClass": "Youngster",
+        "name": "Jim",
+        "rank": 1
+    },
+    {
+        "index": "002",
+        "trainerClass": "Youngster",
+        "name": "Erroll",
+        "rank": 1
+    },
+    {
+        "index": "003",
+        "trainerClass": "Youngster",
+        "name": "Casimir",
+        "rank": 1
+    },
+    {
+        "index": "004",
+        "trainerClass": "Lass",
+        "name": "Cameron",
+        "rank": 1
+    },
+    {
+        "index": "005",
+        "trainerClass": "Lass",
+        "name": "Peaches",
+        "rank": 1
+    },
+    {
+        "index": "006",
+        "trainerClass": "Lass",
+        "name": "Yasmin",
+        "rank": 1
+    },
+    {
+        "index": "007",
+        "trainerClass": "School Kid♂",
+        "name": "Foster",
+        "rank": 1
+    },
+    {
+        "index": "008",
+        "trainerClass": "School Kid♂",
+        "name": "Ken",
+        "rank": 1
+    },
+    {
+        "index": "009",
+        "trainerClass": "School Kid♂",
+        "name": "Owen",
+        "rank": 1
+    },
+    {
+        "index": "010",
+        "trainerClass": "School Kid♀",
+        "name": "Marcy",
+        "rank": 1
+    },
+    {
+        "index": "011",
+        "trainerClass": "School Kid♀",
+        "name": "Shelly",
+        "rank": 1
+    },
+    {
+        "index": "012",
+        "trainerClass": "School Kid♀",
+        "name": "Aspen",
+        "rank": 1
+    },
+    {
+        "index": "013",
+        "trainerClass": "Rich Boy",
+        "name": "Matt",
+        "rank": 1
+    },
+    {
+        "index": "014",
+        "trainerClass": "Rich Boy",
+        "name": "Alvan",
+        "rank": 1
+    },
+    {
+        "index": "015",
+        "trainerClass": "Rich Boy",
+        "name": "Asa",
+        "rank": 1
+    },
+    {
+        "index": "016",
+        "trainerClass": "Lady",
+        "name": "Isabel",
+        "rank": 1
+    },
+    {
+        "index": "017",
+        "trainerClass": "Lady",
+        "name": "Nichole",
+        "rank": 1
+    },
+    {
+        "index": "018",
+        "trainerClass": "Lady",
+        "name": "Juanita",
+        "rank": 1
+    },
+    {
+        "index": "019",
+        "trainerClass": "Camper",
+        "name": "Bernard",
+        "rank": 1
+    },
+    {
+        "index": "020",
+        "trainerClass": "Camper",
+        "name": "Herbert",
+        "rank": 1
+    },
+    {
+        "index": "021",
+        "trainerClass": "Camper",
+        "name": "Colbert",
+        "rank": 1
+    },
+    {
+        "index": "022",
+        "trainerClass": "Picnicker",
+        "name": "Maggie",
+        "rank": 1
+    },
+    {
+        "index": "023",
+        "trainerClass": "Picnicker",
+        "name": "Melanie",
+        "rank": 1
+    },
+    {
+        "index": "024",
+        "trainerClass": "Picnicker",
+        "name": "Ann",
+        "rank": 1
+    },
+    {
+        "index": "025",
+        "trainerClass": "Tuber♂",
+        "name": "Manford",
+        "rank": 1
+    },
+    {
+        "index": "026",
+        "trainerClass": "Tuber♂",
+        "name": "Hank",
+        "rank": 1
+    },
+    {
+        "index": "027",
+        "trainerClass": "Tuber♂",
+        "name": "Percy",
+        "rank": 1
+    },
+    {
+        "index": "028",
+        "trainerClass": "Tuber♀",
+        "name": "Dakota",
+        "rank": 1
+    },
+    {
+        "index": "029",
+        "trainerClass": "Tuber♀",
+        "name": "Jenny",
+        "rank": 1
+    },
+    {
+        "index": "030",
+        "trainerClass": "Tuber♀",
+        "name": "Tia",
+        "rank": 1
+    },
+    {
+        "index": "031",
+        "trainerClass": "Guitarist",
+        "name": "Malcolm",
+        "rank": 1
+    },
+    {
+        "index": "032",
+        "trainerClass": "Guitarist",
+        "name": "Tad",
+        "rank": 1
+    },
+    {
+        "index": "033",
+        "trainerClass": "Guitarist",
+        "name": "Concord",
+        "rank": 1
+    },
+    {
+        "index": "034",
+        "trainerClass": "Idol",
+        "name": "Penny",
+        "rank": 1
+    },
+    {
+        "index": "035",
+        "trainerClass": "Idol",
+        "name": "Lana",
+        "rank": 1
+    },
+    {
+        "index": "036",
+        "trainerClass": "Idol",
+        "name": "Crimson",
+        "rank": 1
+    },
+    {
+        "index": "037",
+        "trainerClass": "Pokéfan♂",
+        "name": "Ewan",
+        "rank": 1
+    },
+    {
+        "index": "038",
+        "trainerClass": "Pokéfan♂",
+        "name": "Kane",
+        "rank": 1
+    },
+    {
+        "index": "039",
+        "trainerClass": "Pokéfan♂",
+        "name": "Theo",
+        "rank": 1
+    },
+    {
+        "index": "040",
+        "trainerClass": "Pokéfan♀",
+        "name": "Alexia",
+        "rank": 1
+    },
+    {
+        "index": "041",
+        "trainerClass": "Pokéfan♀",
+        "name": "Luna",
+        "rank": 1
+    },
+    {
+        "index": "042",
+        "trainerClass": "Pokéfan♀",
+        "name": "Celene",
+        "rank": 1
+    },
+    {
+        "index": "043",
+        "trainerClass": "Waiter",
+        "name": "Cyan",
+        "rank": 1
+    },
+    {
+        "index": "044",
+        "trainerClass": "Waiter",
+        "name": "Indigo",
+        "rank": 1
+    },
+    {
+        "index": "045",
+        "trainerClass": "Waiter",
+        "name": "Orin",
+        "rank": 1
+    },
+    {
+        "index": "046",
+        "trainerClass": "Waitress",
+        "name": "Ashley",
+        "rank": 1
+    },
+    {
+        "index": "047",
+        "trainerClass": "Waitress",
+        "name": "Noelle",
+        "rank": 1
+    },
+    {
+        "index": "048",
+        "trainerClass": "Waitress",
+        "name": "Kandace",
+        "rank": 1
+    },
+    {
+        "index": "049",
+        "trainerClass": "Bug Catcher",
+        "name": "Floyd",
+        "rank": 1
+    },
+    {
+        "index": "050",
+        "trainerClass": "Bug Catcher",
+        "name": "Hoffman",
+        "rank": 1
+    },
+    {
+        "index": "051",
+        "trainerClass": "Bug Catcher",
+        "name": "Amadeus",
+        "rank": 1
+    },
+    {
+        "index": "052",
+        "trainerClass": "Ninja Boy",
+        "name": "Shia",
+        "rank": 1
+    },
+    {
+        "index": "053",
+        "trainerClass": "Ninja Boy",
+        "name": "Vincent",
+        "rank": 1
+    },
+    {
+        "index": "054",
+        "trainerClass": "Ninja Boy",
+        "name": "Pierre",
+        "rank": 1
+    },
+    {
+        "index": "055",
+        "trainerClass": "Poké Kid",
+        "name": "Alice",
+        "rank": 1
+    },
+    {
+        "index": "056",
+        "trainerClass": "Poké Kid",
+        "name": "Anita",
+        "rank": 1
+    },
+    {
+        "index": "057",
+        "trainerClass": "Poké Kid",
+        "name": "Allison",
+        "rank": 1
+    },
+    {
+        "index": "058",
+        "trainerClass": "Fisherman",
+        "name": "Kiefer",
+        "rank": 1
+    },
+    {
+        "index": "059",
+        "trainerClass": "Fisherman",
+        "name": "Basil",
+        "rank": 1
+    },
+    {
+        "index": "060",
+        "trainerClass": "Ruin Maniac",
+        "name": "Henrik",
+        "rank": 1
+    },
+    {
+        "index": "061",
+        "trainerClass": "Ruin Maniac",
+        "name": "Aubry",
+        "rank": 1
+    },
+    {
+        "index": "062",
+        "trainerClass": "Collector",
+        "name": "Upton",
+        "rank": 1
+    },
+    {
+        "index": "063",
+        "trainerClass": "Collector",
+        "name": "Emil",
+        "rank": 1
+    },
+    {
+        "index": "064",
+        "trainerClass": "Parasol Lady",
+        "name": "Bridget",
+        "rank": 1
+    },
+    {
+        "index": "065",
+        "trainerClass": "Parasol Lady",
+        "name": "Blanche",
+        "rank": 1
+    },
+    {
+        "index": "066",
+        "trainerClass": "Parasol Lady",
+        "name": "Colette",
+        "rank": 1
+    },
+    {
+        "index": "067",
+        "trainerClass": "Beauty",
+        "name": "Tiffany",
+        "rank": 1
+    },
+    {
+        "index": "068",
+        "trainerClass": "Beauty",
+        "name": "Britney",
+        "rank": 1
+    },
+    {
+        "index": "069",
+        "trainerClass": "Beauty",
+        "name": "Harmony",
+        "rank": 1
+    },
+    {
+        "index": "070",
+        "trainerClass": "Aroma Lady",
+        "name": "Lucy",
+        "rank": 1
+    },
+    {
+        "index": "071",
+        "trainerClass": "Aroma Lady",
+        "name": "Jackie",
+        "rank": 1
+    },
+    {
+        "index": "072",
+        "trainerClass": "Aroma Lady",
+        "name": "Kara",
+        "rank": 1
+    },
+    {
+        "index": "073",
+        "trainerClass": "Guitarist",
+        "name": "Bernie",
+        "rank": 1
+    },
+    {
+        "index": "074",
+        "trainerClass": "Guitarist",
+        "name": "Curtis",
+        "rank": 1
+    },
+    {
+        "index": "075",
+        "trainerClass": "Bird Keeper",
+        "name": "Nancy",
+        "rank": 1
+    },
+    {
+        "index": "076",
+        "trainerClass": "Bird Keeper",
+        "name": "Trinity",
+        "rank": 1
+    },
+    {
+        "index": "077",
+        "trainerClass": "Bird Keeper",
+        "name": "Shawna",
+        "rank": 1
+    },
+    {
+        "index": "078",
+        "trainerClass": "Sailor",
+        "name": "Layton",
+        "rank": 1
+    },
+    {
+        "index": "079",
+        "trainerClass": "Sailor",
+        "name": "Godwin",
+        "rank": 1
+    },
+    {
+        "index": "080",
+        "trainerClass": "Hiker",
+        "name": "Everett",
+        "rank": 1
+    }
+]
