@@ -1,12 +1,13 @@
 package com.frontier.repository;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.frontier.model.Trainer;
 
 @Repository
-public class TrainerRepository {
+public interface TrainerRepository extends MongoRepository<Trainer, String> {
 
-    public String getTrainerById(String id) {
-        return new String("This is a test of the GET /trainer/" + id + " endpoint");
-    }
+    public Trainer getTrainerByName(String name);
     
 }
