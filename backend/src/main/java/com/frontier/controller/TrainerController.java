@@ -17,7 +17,7 @@ public class TrainerController {
 
     @GetMapping("/trainer/{name}")
     public Trainer getTrainer(@PathVariable String name) {
-        return trainerRepository.getTrainerByName(name);
+        return trainerRepository.findByName(name);
     }
 
     @GetMapping("/trainers")

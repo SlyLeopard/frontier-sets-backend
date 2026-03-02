@@ -11,7 +11,7 @@ import com.frontier.model.Trainer;
 @Repository
 public interface TrainerRepository extends MongoRepository<Trainer, String> {
 
-    public Trainer getTrainerByName(String name);
+    public Trainer findByName(String name);
 
     public List<Trainer> findAll(); 
     
