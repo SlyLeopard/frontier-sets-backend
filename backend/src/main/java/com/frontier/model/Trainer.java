@@ -3,10 +3,9 @@ package com.frontier.model;
 // Imports
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 // Annotations
 @Data
@@ -23,4 +22,5 @@ public class Trainer {
     private String name;
     private String trainerClass;
     private Integer rank;
+
 }

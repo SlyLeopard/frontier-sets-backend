@@ -1,20 +1,24 @@
 package com.frontier.controller;
 
+// Imports
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.frontier.repository.PokemonSetRepository;
 
-import lombok.AllArgsConstructor;
-
+// Annotations
 @RestController
-@AllArgsConstructor
+
+// Class
 public class PokemonSetController {
 
-    private final PokemonSetRepository pokemonSetRepository;
+    // Attributes
+    @Autowired
+    private PokemonSetRepository pokemonSetRepository;
 
+    // Endpoints
     @GetMapping("/pokemonSetTest")
     public String getMethodName(@RequestParam String param) {
         return new String("This is a test of the GET /pokemonSet endpoint");
@@ -25,5 +29,4 @@ public class PokemonSetController {
         return pokemonSetRepository.getPokemonSetById(id);
     }
 
-    
 }
