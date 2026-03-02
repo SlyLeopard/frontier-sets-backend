@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Document(collection = "trainers")
+@Document(collection = "trainer")
 @AllArgsConstructor
 public class Trainer {
 
