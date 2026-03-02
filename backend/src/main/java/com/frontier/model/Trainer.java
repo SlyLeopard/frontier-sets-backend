@@ -1,36 +1,23 @@
 package com.frontier.model;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
-@Document(collection = "trainer")
+@Document(collection = "trainers")
 @AllArgsConstructor
 public class Trainer {
 
     @Id
-    @Getter
     private String id;
 
-    @Getter
-    @Setter
-    private String index;
-
-    @Getter
-    @Setter
+    private Integer index;
     private String name;
-
-    @Getter
-    @Setter
     private String trainerClass;
-
-    @Getter
-    @Setter
-    private int rank;
+    private Integer rank;
     
 }

@@ -19,5 +19,10 @@ public class TrainerController {
     public Trainer getTrainer(@PathVariable String name) {
         return trainerRepository.getTrainerByName(name);
     }
+
+    @GetMapping("/trainers")
+    public Iterable<Trainer> getAllTrainers() {
+        return trainerRepository.findAll();
+    }
     
 }
