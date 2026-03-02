@@ -28,5 +28,5 @@ public class PokemonController {
     public String getPokemon(@PathVariable String id) {
         return pokemonRepository.getPokemonById(id);
     }
-    
+
 }
