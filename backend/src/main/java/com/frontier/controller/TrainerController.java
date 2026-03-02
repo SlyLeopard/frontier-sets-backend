@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.frontier.model.Trainer;
 import com.frontier.repository.TrainerRepository;
 
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
-@AllArgsConstructor
 public class TrainerController {
 
-    private final TrainerRepository trainerRepository;
+    @Autowired
+    private TrainerRepository trainerRepository;
 
     @GetMapping("/trainer/{name}")
     public Trainer getTrainer(@PathVariable String name) {
