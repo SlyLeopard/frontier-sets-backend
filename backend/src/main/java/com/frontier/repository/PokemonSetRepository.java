@@ -2,15 +2,26 @@ package com.frontier.repository;
 
 // Imports
 import org.springframework.stereotype.Repository;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import com.frontier.model.PokemonSet;
 
 // Annotations
 @Repository
 
 // Class
-public class PokemonSetRepository {
+public interface PokemonSetRepository extends MongoRepository<PokemonSet, String> {
     
     // Methods
-    public String getPokemonSetById(String id) {
-        return new String("This is a test of the GET /pokemonSet/" + id + " endpoint");
-    }
+    public Optional<PokemonSet> findById(String id);
+
+    public List<PokemonSet> findByPokemonDex(Integer dex);
+
+    public List<PokemonSet> findByPokemonName(String name);
+
+    public List<PokemonSet> findByRankAndPokemonName(Integer rank, String name);
+
+    public List<PokemonSet> findAll();
 }

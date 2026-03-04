@@ -21,7 +21,6 @@ public class PokemonSet {
     @Id
     private String id;
     private Pokemon pokemon;
-    private int dex;
     private int hpEv;
     private int atkEv;
     private int defEv;

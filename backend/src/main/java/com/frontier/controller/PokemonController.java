@@ -26,7 +26,7 @@ public class PokemonController {
 
     @GetMapping("/pokemon/{id}")
     public String getPokemon(@PathVariable String id) {
-        return pokemonRepository.getPokemonById(id);
+        return new String("This is a test of the GET /pokemon/" + id + " endpoint");
     }
 
 }
