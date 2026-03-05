@@ -20,7 +20,9 @@ public class PokemonSet {
     // Attributes
     @Id
     private String id;
-    private Pokemon pokemon;
+
+    private String name;
+    private String species;
     private int hpEv;
     private int atkEv;
     private int defEv;
@@ -30,5 +32,8 @@ public class PokemonSet {
     private ArrayList<String> moves;
     private String nature;
     private String item;
+    private int rank;
+    private int generation;
+    private boolean isCustom;
     
 }

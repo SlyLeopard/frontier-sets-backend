@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Bulbasaur 1",
+        "species": "Bulbasaur",
+        "hpEv": 0,
+        "atkEv": 0,
+        "defEv": 0,
+        "spaEv": 252,
+        "spdEv": 252,
+        "speEv": 0,
+        "moves": [
+            "Magical Leaf",
+            "Toxic",
+            "Leech Seed",
+            "Sweet Scent"
+        ],
+        "nature": "Modest",
+        "item": "BrightPowder",
+        "rank": 1,
+        "generation": 4,
+        "isCustom": false
+    },
+    {
+        "name": "Charmander 1",
+        "species": "Charmander",
+        "hpEv": 0,
+        "atkEv": 252,
+        "defEv": 0,
+        "spaEv": 0,
+        "spdEv": 0,
+        "speEv": 252,
+        "moves": [
+            "Fire Fang",
+            "Metal Claw",
+            "SmokeScreen",
+            "Scary Face"
+        ],
+        "nature": "Adamant",
+        "item": "Scope Lens",
+        "generation": 4,
+        "rank": 1,
+        "isCustom": false
+    },
+    {
+        "name": "Squirtle 1",
+        "species": "Squirtle",
+        "hpEv": 252,
+        "atkEv": 252,
+        "defEv": 0,
+        "spaEv": 0,
+        "spdEv": 0,
+        "speEv": 0,
+        "moves": [
+            "Aqua Jet",
+            "Bite",
+            "Withdraw",
+            "Protect"
+        ],
+        "nature": "Adamant",
+        "item": "Sea Incense",
+        "rank": 1,
+        "generation": 4,
+        "isCustom": false
+    },
+    {
+        "name": "Ruby",
+        "species": "Latias",
+        "hpEv": 4,
+        "atkEv": 0,
+        "defEv": 0,
+        "spaEv": 252,
+        "spdEv": 0,
+        "speEv": 252,
+        "moves": [
+            "Surf",
+            "Thunderbolt",
+            "Psychic",
+            "Draco Meteor"
+        ],
+        "nature": "Timid",
+        "item": "Life Orb",
+        "rank": 8,
+        "generation": 4,
+        "isCustom": true
+    }
+]

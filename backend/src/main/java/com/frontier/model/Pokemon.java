@@ -28,7 +28,7 @@ public class Pokemon {
     private int spa;
     private int spd;
     private int spe;
-    private ArrayList<String> types;
+    private ArrayList<String> type;
     private ArrayList<String> abilities;
     
 }
