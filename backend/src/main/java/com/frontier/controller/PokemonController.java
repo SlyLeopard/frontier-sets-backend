@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.frontier.model.Pokemon;
 import com.frontier.repository.PokemonRepository;
 
 // Annotations
@@ -19,14 +21,14 @@ public class PokemonController {
     private PokemonRepository pokemonRepository;
 
     // Endpoints
-    @GetMapping("/pokemonTest")
-    public String getMethodName(@RequestParam String param) {
-        return new String("This is a test of the GET /pokemon endpoint");
+    @GetMapping("/pokemon/{name}")
+    public Pokemon getMethodName(@PathVariable String name) {
+        return pokemonRepository.findByName(name);
     }
 
-    @GetMapping("/pokemon/{id}")
-    public String getPokemon(@PathVariable String id) {
-        return new String("This is a test of the GET /pokemon/" + id + " endpoint");
+    @GetMapping("/allPokemon")
+    public Iterable<Pokemon> getPokemon() {
+        return pokemonRepository.findAll();
     }
 
 }

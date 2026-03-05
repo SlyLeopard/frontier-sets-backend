@@ -4,8 +4,9 @@ package com.frontier.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.frontier.model.PokemonSet;
 import com.frontier.repository.PokemonSetRepository;
 
 // Annotations
@@ -19,14 +20,14 @@ public class PokemonSetController {
     private PokemonSetRepository pokemonSetRepository;
 
     // Endpoints
-    @GetMapping("/pokemonSetTest")
-    public String getMethodName(@RequestParam String param) {
-        return new String("This is a test of the GET /pokemonSet endpoint");
+    @GetMapping("/pokemonSet/{name}")
+    public PokemonSet getMethodName(@PathVariable String name) {
+        return pokemonSetRepository.findByName(name);
     }
 
-    @GetMapping("/pokemonSet/{id}")
-    public String getPokemonSet(@PathVariable String id) {
-        return new String("This is a test of the GET /pokemonSet/" + id + " endpoint");
+    @GetMapping("/allPokemonSets")
+    public Iterable<PokemonSet> getPokemon() {
+        return pokemonSetRepository.findAll();
     }
 
 }

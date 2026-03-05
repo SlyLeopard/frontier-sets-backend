@@ -17,11 +17,11 @@ public interface PokemonSetRepository extends MongoRepository<PokemonSet, String
     // Methods
     public Optional<PokemonSet> findById(String id);
 
-    public List<PokemonSet> findByPokemonDex(Integer dex);
+    public PokemonSet findByName(String name);
 
-    public List<PokemonSet> findByPokemonName(String name);
+    public List<PokemonSet> findBySpecies(String species);
 
-    public List<PokemonSet> findByRankAndPokemonName(Integer rank, String name);
+    public List<PokemonSet> findByRankAndSpecies(Integer rank, String species);
 
     public List<PokemonSet> findAll();
 }
