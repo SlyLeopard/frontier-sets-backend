@@ -21,6 +21,8 @@ public interface PokemonSetRepository extends MongoRepository<PokemonSet, String
 
     public List<PokemonSet> findBySpecies(String species);
 
+    public List<PokemonSet> findByRank(Integer rank);
+
     public List<PokemonSet> findByRankAndSpecies(Integer rank, String species);
 
     public List<PokemonSet> findAll();

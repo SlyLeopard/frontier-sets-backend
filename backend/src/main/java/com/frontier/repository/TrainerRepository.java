@@ -19,6 +19,8 @@ public interface TrainerRepository extends MongoRepository<Trainer, String> {
 
     public Trainer findByName(String name);
 
-    public List<Trainer> findAll(); 
-    
+    public Integer findRankByName(String name);
+
+    public List<Trainer> findAll();
+
 }
