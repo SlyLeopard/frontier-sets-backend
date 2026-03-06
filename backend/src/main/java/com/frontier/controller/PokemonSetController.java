@@ -34,7 +34,7 @@ public class PokemonSetController {
         return pokemonSetRepository.findAll();
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE + "/searchPokemonSets")
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, value = "/searchPokemonSets")
     public Iterable<PokemonSet> searchPokemonSets(@RequestBody(required = true) SearchCriteria searchCriteria) {
         String species = searchCriteria.getSpecies();
         Integer rank = searchCriteria.getRank();
