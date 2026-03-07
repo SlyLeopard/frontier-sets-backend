@@ -2,12 +2,14 @@
     {
         "name": "Bulbasaur 1",
         "species": "Bulbasaur",
-        "hpEv": 0,
-        "atkEv": 0,
-        "defEv": 0,
-        "spaEv": 252,
-        "spdEv": 252,
-        "speEv": 0,
+        "ev": [
+            0,
+            0,
+            0,
+            252,
+            252,
+            0
+        ],
         "moves": [
             "Magical Leaf",
             "Toxic",
@@ -23,12 +25,14 @@
     {
         "name": "Charmander 1",
         "species": "Charmander",
-        "hpEv": 0,
-        "atkEv": 252,
-        "defEv": 0,
-        "spaEv": 0,
-        "spdEv": 0,
-        "speEv": 252,
+        "ev": [
+            0,
+            252,
+            0,
+            0,
+            0,
+            252
+        ],
         "moves": [
             "Fire Fang",
             "Metal Claw",
@@ -44,12 +48,14 @@
     {
         "name": "Squirtle 1",
         "species": "Squirtle",
-        "hpEv": 252,
-        "atkEv": 252,
-        "defEv": 0,
-        "spaEv": 0,
-        "spdEv": 0,
-        "speEv": 0,
+        "ev": [
+            252,
+            252,
+            0,
+            0,
+            0,
+            0
+        ],
         "moves": [
             "Aqua Jet",
             "Bite",

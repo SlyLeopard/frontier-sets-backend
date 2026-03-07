@@ -22,12 +22,14 @@
     {
         "name": "Ivysaur",
         "dex": 2,
-        "hp": 60,
-        "atk": 62,
-        "def": 63,
-        "spa": 80,
-        "spd": 80,
-        "spe": 60,
+        "stats": [
+            60,
+            62,
+            63,
+            80,
+            80,
+            60
+        ],
         "type": [
             "Grass",
             "Poison"
@@ -40,12 +42,14 @@
     {
         "name": "Venusaur",
         "dex": 3,
-        "hp": 80,
-        "atk": 82,
-        "def": 83,
-        "spa": 100,
-        "spd": 100,
-        "spe": 80,
+        "stats": [
+            80,
+            82,
+            83,
+            100,
+            100,
+            80
+        ],
         "type": [
             "Grass",
             "Poison"
@@ -58,12 +62,14 @@
     {
         "name": "Charmander",
         "dex": 4,
-        "hp": 39,
-        "atk": 52,
-        "def": 43,
-        "spa": 60,
-        "spd": 50,
-        "spe": 65,
+        "stats": [
+            39,
+            52,
+            43,
+            60,
+            50,
+            65
+        ],
         "type": [
             "Fire"
         ],
@@ -75,12 +81,14 @@
     {
         "name": "Charmeleon",
         "dex": 5,
-        "hp": 58,
-        "atk": 64,
-        "def": 58,
-        "spa": 80,
-        "spd": 65,
-        "spe": 80,
+        "stats": [
+            58,
+            64,
+            58,
+            80,
+            65,
+            80
+        ],
         "type": [
             "Fire"
         ],
@@ -92,12 +100,14 @@
     {
         "name": "Charizard",
         "dex": 6,
-        "hp": 78,
-        "atk": 84,
-        "def": 78,
-        "spa": 109,
-        "spd": 85,
-        "spe": 100,
+        "stats": [
+            78,
+            84,
+            78,
+            109,
+            85,
+            100
+        ],
         "type": [
             "Fire",
             "Flying"
@@ -110,12 +120,14 @@
     {
         "name": "Squirtle",
         "dex": 7,
-        "hp": 44,
-        "atk": 48,
-        "def": 65,
-        "spa": 50,
-        "spd": 64,
-        "spe": 43,
+        "stats": [
+            44,
+            48,
+            65,
+            50,
+            64,
+            43
+        ],
         "type": [
             "Water"
         ],
@@ -127,12 +139,14 @@
     {
         "name": "Wartortle",
         "dex": 8,
-        "hp": 59,
-        "atk": 63,
-        "def": 80,
-        "spa": 65,
-        "spd": 80,
-        "spe": 58,
+        "stats": [
+            59,
+            63,
+            80,
+            65,
+            80,
+            58
+        ],
         "type": [
             "Water"
         ],
@@ -144,12 +158,14 @@
     {
         "name": "Blastoise",
         "dex": 9,
-        "hp": 79,
-        "atk": 83,
-        "def": 100,
-        "spa": 85,
-        "spd": 105,
-        "spe": 78,
+        "stats": [
+            79,
+            83,
+            100,
+            85,
+            105,
+            78
+        ],
         "type": [
             "Water"
         ],
