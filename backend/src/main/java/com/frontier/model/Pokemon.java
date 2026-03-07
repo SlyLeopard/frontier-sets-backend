@@ -21,13 +21,8 @@ public class Pokemon {
     @Id
     private String id;
     private String name;
-    private int dex;
-    private int hp;
-    private int atk;
-    private int def;
-    private int spa;
-    private int spd;
-    private int spe;
+    private Integer dex;
+    private ArrayList<Integer> stats;
     private ArrayList<String> type;
     private ArrayList<String> abilities;
     

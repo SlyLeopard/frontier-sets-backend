@@ -1,39 +1,24 @@
 package com.frontier.model;
 
 // Imports
-import java.util.ArrayList;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 // Annotations
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "pokemonSet")
 
 // Class
-public class PokemonSet {
+public class PokemonSet extends Set {
 
     // Attributes
-    @Id
-    private String id;
-
-    private String name;
-    private String species;
-    private int hpEv;
-    private int atkEv;
-    private int defEv;
-    private int spaEv;
-    private int spdEv;
-    private int speEv;
-    private ArrayList<String> moves;
-    private String nature;
-    private String item;
-    private int rank;
-    private int generation;
-    private boolean isCustom;
+    private Integer rank;
+    private Integer generation;
     
 }
