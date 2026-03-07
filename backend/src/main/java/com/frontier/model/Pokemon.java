@@ -3,7 +3,7 @@ package com.frontier.model;
 // Imports
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
-import java.util.ArrayList;
+import java.util.List;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,8 +22,8 @@ public class Pokemon {
     private String id;
     private String name;
     private Integer dex;
-    private ArrayList<Integer> stats;
-    private ArrayList<String> type;
-    private ArrayList<String> abilities;
+    private List<Integer> stats;
+    private List<String> type;
+    private List<String> abilities;
     
 }

@@ -1,6 +1,8 @@
 package com.frontier.model;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,9 +13,10 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@Document(collection = "customSet")
 public class CustomSet extends Set {
     
     // Attributes
-    private ArrayList<Integer> iv;
+    private List<Integer> iv;
     
 }

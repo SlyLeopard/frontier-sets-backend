@@ -1,6 +1,6 @@
 package com.frontier.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -18,8 +18,8 @@ public abstract class Set {
 
     private String name;
     private String species;
-    private ArrayList<Integer> ev;
-    private ArrayList<String> moves;
+    private List<Integer> ev;
+    private List<String> moves;
     private String nature;
     private String item;
 
