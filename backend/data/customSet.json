@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Ruby",
+        "species": "Latias",
+        "ev": [
+            "4",
+            "0",
+            "0",
+            "252",
+            "0",
+            "252"
+        ],
+        "iv": [
+            "31",
+            "31",
+            "31",
+            "31",
+            "31",
+            "31"
+        ],
+        "moves": [
+            "Surf",
+            "Thunderbolt",
+            "Psychic",
+            "Draco Meteor"
+        ],
+        "nature": "Timid",
+        "item": "Life Orb"
+    }
+]
