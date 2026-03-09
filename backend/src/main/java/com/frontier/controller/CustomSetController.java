@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.frontier.model.CustomSet;
-import com.frontier.model.search.CustomSetSearchCriteria;
+import com.frontier.search.CustomSetSearchCriteria;
 import com.frontier.service.CustomSetService;
 
 public class CustomSetController {
@@ -21,7 +21,7 @@ public class CustomSetController {
     // Endpoints
     @GetMapping(value = "/customSet/{name}")
     public CustomSet getCustomSetByName(@PathVariable String name) {
-        return service.getSetByName(name);
+        return service.getByName(name);
     }
 
     @GetMapping(value = "/allCustomSets")
@@ -31,7 +31,7 @@ public class CustomSetController {
 
     @PostMapping(value = "/searchCustomSets", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<CustomSet> searchCustomSets(@RequestBody(required = true) CustomSetSearchCriteria searchCriteria) {
-        return service.searchCustomSets(searchCriteria);
+        return service.search(searchCriteria);
     }
 
 }

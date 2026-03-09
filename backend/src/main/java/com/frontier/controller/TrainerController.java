@@ -21,12 +21,12 @@ public class TrainerController {
     // Endpoints
     @GetMapping(value = "/trainer/{name}")
     public Trainer getTrainer(@PathVariable String name) {
-        return service.getTrainer(name);
+        return service.getByName(name);
     }
 
     @GetMapping(value = "/trainers")
     public Iterable<Trainer> getAllTrainers() {
-        return service.getAllTrainers();
+        return service.getAll();
     }
 
 }

@@ -22,12 +22,12 @@ public class PokemonController {
     // Endpoints
     @GetMapping(value = "/pokemon/{name}")
     public Pokemon getPokemonByName(@PathVariable String name) {
-        return service.getPokemonByName(name);
+        return service.getByName(name);
     }
 
     @GetMapping(value = "/allPokemon")
     public Iterable<Pokemon> getPokemon() {
-        return service.getPokemon();
+        return service.getAll();
     }
 
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.frontier.model.PokemonSet;
-import com.frontier.model.search.PokemonSetSearchCriteria;
+import com.frontier.search.PokemonSetSearchCriteria;
 import com.frontier.service.PokemonSetService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +27,7 @@ public class PokemonSetController {
     // Endpoints
     @GetMapping(value = "/pokemonSet/{name}")
     public PokemonSet getPokemonSetByName(@PathVariable String name) {
-        return service.getSetByName(name);
+        return service.getByName(name);
     }
 
     @GetMapping(value = "/allPokemonSets")
@@ -38,7 +38,7 @@ public class PokemonSetController {
     @PostMapping(value = "/searchPokemonSets", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<PokemonSet> searchPokemonSets(
             @RequestBody(required = true) PokemonSetSearchCriteria searchCriteria) {
-        return service.searchPokemonSets(searchCriteria);
+        return service.search(searchCriteria);
     }
 
 }
