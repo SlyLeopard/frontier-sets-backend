@@ -20,7 +20,6 @@ public class PokemonSetSearchCriteria extends BaseSetSearchCriteria{
         addIfPresent(query, "rank", rank);
         addIfPresent(query, "generation", generation);
         addBaseSetCriteria(query);
-        
         return query;
     }
 

@@ -37,10 +37,6 @@ public abstract class BaseSearchCriteria {
     public void addBaseCriteria(Query query) {
 
         addIfPresent(query, "name", name);
-        addIfPresent(query, "page", page);
-        addIfPresent(query, "size", size);
-        addIfPresent(query, "sortBy", sortBy);
-        addIfPresent(query, "sortDirection", sortDirection);
         
     }
 

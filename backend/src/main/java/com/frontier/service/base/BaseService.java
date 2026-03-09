@@ -50,10 +50,8 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
     public Page<T> search(C criteria) {
 
         Query query = criteria.toQuery();
-
         Pageable pageable = criteria.toPageable();
         query.with(pageable);
-
         List<T> results = mongoTemplate.find(query, entityClass);
 
         return PageableExecutionUtils.getPage(
