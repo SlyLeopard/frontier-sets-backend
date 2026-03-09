@@ -2,6 +2,10 @@ package com.frontier.model;
 
 // Imports
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.frontier.enums.PokemonType;
+import com.frontier.enums.Stat;
+
 import org.springframework.data.annotation.Id;
 import java.util.List;
 import lombok.NoArgsConstructor;
@@ -22,8 +26,16 @@ public class Pokemon {
     private String id;
     private String name;
     private Integer dex;
-    private List<Integer> stats;
-    private List<String> type;
+    private Integer[] stats;
+    private List<PokemonType> type;
     private List<String> abilities;
-    
+
+    public int getStat(Stat stat) {
+        return stats[stat.index()];
+    }
+
+    public void setStat(Stat stat, int value) {
+        stats[stat.index()] = value;
+    }
+
 }
