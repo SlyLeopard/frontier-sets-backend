@@ -1,24 +1,23 @@
 package com.frontier.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import com.frontier.model.Trainer;
 import com.frontier.repository.TrainerRepository;
+import com.frontier.search.TrainerSearchCriteria;
+import com.frontier.service.base.BaseService;
 
 @Service
-public class TrainerService {
+public class TrainerService extends BaseService<Trainer, TrainerRepository, TrainerSearchCriteria> {
 
-    // Attributes
-    @Autowired
-    private TrainerRepository trainerRepo;
-
-    public Trainer getTrainer(String name) {
-        return trainerRepo.findByName(name);
+    public TrainerService(TrainerRepository repo, MongoTemplate mongoTemplate) {
+        super(repo, mongoTemplate);
     }
 
-    public Iterable<Trainer> getAllTrainers() {
-        return trainerRepo.findAll();
+    public Page<Trainer> search(TrainerSearchCriteria criteria) {
+        return super.search(criteria, Trainer.class);
     }
 
 }

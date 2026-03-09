@@ -1,35 +1,29 @@
 package com.frontier.service.base;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.data.mongodb.repository.MongoRepository;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Service;
 import com.frontier.model.base.AbstractSet;
+import com.frontier.repository.base.BaseRepository;
+import com.frontier.search.base.BaseSetSearchCriteria;
 
-public abstract class BaseSetService<T extends AbstractSet, R extends MongoRepository<T, String>> {
+@Service
+public abstract class BaseSetService<T extends AbstractSet, R extends BaseRepository<T>, C extends BaseSetSearchCriteria> extends BaseService<T, R, C> {
 
     protected final R repo;
+    protected final MongoTemplate mongoTemplate;
+    private final Class<T> entityClass;
 
-    protected BaseSetService(R repo) {
+    protected BaseSetService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass) {
+        super(repo, mongoTemplate);
         this.repo = repo;
-    }
-
-    public List<T> getAll() {
-        return repo.findAll();
-    }
-
-    public Optional<T> getById(String id) {
-        return repo.findById(id);
+        this.mongoTemplate = mongoTemplate;
+        this.entityClass = entityClass;
     }
 
     public T save(T set) {
         validateSet(set);
         return repo.save(set);
-    }
-
-    public void delete(String id) {
-        repo.deleteById(id);
     }
 
     protected void validateSet(T set) {
@@ -38,6 +32,10 @@ public abstract class BaseSetService<T extends AbstractSet, R extends MongoRepos
             throw new IllegalArgumentException("A set cannot have more than 4 moves");
         }
 
+    }
+
+    public Page<T> search(C criteria) {
+        return super.search(criteria, entityClass);
     }
 
 }
