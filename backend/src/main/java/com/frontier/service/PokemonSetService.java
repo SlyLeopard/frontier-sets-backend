@@ -10,21 +10,17 @@ import com.frontier.repository.PokemonSetRepository;
 import com.frontier.service.base.BaseSetService;
 
 @Service
-public class PokemonSetService extends BaseSetService<PokemonSet> {
-
-    @Autowired
-    private final PokemonSetRepository pokemonSetRepo;
+public class PokemonSetService extends BaseSetService<PokemonSet, PokemonSetRepository> {
 
     private final MongoTemplate mongoTemplate;
 
     public PokemonSetService(PokemonSetRepository repo, MongoTemplate mongoTemplate) {
         super(repo);
-        this.pokemonSetRepo = repo;
         this.mongoTemplate = mongoTemplate;
     }
 
     public PokemonSet getSetByName(String name) {
-        return pokemonSetRepo.findByName(name);
+        return repo.findByName(name);
     }
 
     public Iterable<PokemonSet> searchPokemonSets(PokemonSetSearchCriteria criteria) {

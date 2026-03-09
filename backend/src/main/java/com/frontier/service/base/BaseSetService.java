@@ -5,13 +5,13 @@ import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.frontier.model.base.Set;
+import com.frontier.model.base.AbstractSet;
 
-public abstract class BaseSetService<T extends Set> {
+public abstract class BaseSetService<T extends AbstractSet, R extends MongoRepository<T, String>> {
 
-    protected final MongoRepository<T, String> repo;
+    protected final R repo;
 
-    protected BaseSetService(MongoRepository<T, String> repo) {
+    protected BaseSetService(R repo) {
         this.repo = repo;
     }
 
