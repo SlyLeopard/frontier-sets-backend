@@ -1,44 +1,22 @@
 package com.frontier.controller;
 
 // Imports
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.frontier.controller.base.BaseController;
 import com.frontier.model.PokemonSet;
 import com.frontier.search.PokemonSetSearchCriteria;
 import com.frontier.service.PokemonSetService;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 // Annotations
 @RestController
+@RequestMapping("/pokemon-set")
 
 // Class
-public class PokemonSetController {
+public class PokemonSetController extends BaseController<PokemonSet, PokemonSetSearchCriteria> {
 
-    // Attributes
-    @Autowired
-    private PokemonSetService service;
-
-    // Endpoints
-    @GetMapping(value = "/pokemonSet/{name}")
-    public PokemonSet getPokemonSetByName(@PathVariable String name) {
-        return service.getByName(name);
-    }
-
-    @GetMapping(value = "/allPokemonSets")
-    public Iterable<PokemonSet> getAllPokemonSets() {
-        return service.getAll();
-    }
-
-    @PostMapping(value = "/searchPokemonSets", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<PokemonSet> searchPokemonSets(
-            @RequestBody(required = true) PokemonSetSearchCriteria searchCriteria) {
-        return service.search(searchCriteria);
+    public PokemonSetController(PokemonSetService service) {
+        super(service);
     }
 
 }

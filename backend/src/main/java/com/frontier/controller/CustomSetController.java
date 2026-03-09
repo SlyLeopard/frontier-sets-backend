@@ -1,37 +1,22 @@
 package com.frontier.controller;
 
 // Imports
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.frontier.controller.base.BaseController;
 import com.frontier.model.CustomSet;
 import com.frontier.search.CustomSetSearchCriteria;
 import com.frontier.service.CustomSetService;
 
-public class CustomSetController {
+// Annotations
+@Controller
+@RequestMapping("/custom-set")
 
-    // Attributes
-    @Autowired
-    private CustomSetService service;
+// Class
+public class CustomSetController extends BaseController<CustomSet, CustomSetSearchCriteria> {
 
-    // Endpoints
-    @GetMapping(value = "/customSet/{name}")
-    public CustomSet getCustomSetByName(@PathVariable String name) {
-        return service.getByName(name);
-    }
-
-    @GetMapping(value = "/allCustomSets")
-    public Iterable<CustomSet> getAllCustomSets() {
-        return service.getAll();
-    }
-
-    @PostMapping(value = "/searchCustomSets", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<CustomSet> searchCustomSets(@RequestBody(required = true) CustomSetSearchCriteria searchCriteria) {
-        return service.search(searchCriteria);
+    public CustomSetController(CustomSetService service) {
+        super(service);
     }
 
 }

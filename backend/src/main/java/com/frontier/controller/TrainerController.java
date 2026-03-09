@@ -1,32 +1,22 @@
 package com.frontier.controller;
 
 // Imports
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.frontier.controller.base.BaseController;
 import com.frontier.model.Trainer;
+import com.frontier.search.TrainerSearchCriteria;
 import com.frontier.service.TrainerService;
 
 // Annotations
 @RestController
+@RequestMapping("/trainer")
 
 // Class
-public class TrainerController {
+public class TrainerController extends BaseController<Trainer, TrainerSearchCriteria> {
 
-    // Attributes
-    @Autowired
-    private TrainerService service;
-
-    // Endpoints
-    @GetMapping(value = "/trainer/{name}")
-    public Trainer getTrainer(@PathVariable String name) {
-        return service.getByName(name);
-    }
-
-    @GetMapping(value = "/trainers")
-    public Iterable<Trainer> getAllTrainers() {
-        return service.getAll();
+    public TrainerController(TrainerService service) {
+        super(service);
     }
 
 }
