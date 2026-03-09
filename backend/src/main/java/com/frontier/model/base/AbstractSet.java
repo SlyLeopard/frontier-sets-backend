@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class AbstractSet extends BaseEntity {
-    
+
     private String species;
     private Integer[] ev;
     private List<String> moves;

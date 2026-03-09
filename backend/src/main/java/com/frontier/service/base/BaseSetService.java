@@ -1,8 +1,8 @@
 package com.frontier.service.base;
 
-
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
+
 import com.frontier.model.base.AbstractSet;
 import com.frontier.repository.base.BaseRepository;
 import com.frontier.search.base.BaseSetSearchCriteria;

@@ -1,8 +1,10 @@
 package com.frontier.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.frontier.enums.Stat;
 import com.frontier.model.base.AbstractSet;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,7 +17,6 @@ import lombok.NoArgsConstructor;
 @Document(collection = "customSet")
 public class CustomSet extends AbstractSet {
 
-    // Attributes
     private Integer[] iv;
 
     public int getIV(Stat stat) {
