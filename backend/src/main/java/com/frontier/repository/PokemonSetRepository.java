@@ -13,17 +13,10 @@ import com.frontier.model.PokemonSet;
 
 // Class
 public interface PokemonSetRepository extends MongoRepository<PokemonSet, String> {
-    
-    // Methods
-    public Optional<PokemonSet> findById(String id);
 
+    // Methods
     public PokemonSet findByName(String name);
 
     public List<PokemonSet> findBySpecies(String species);
 
-    public List<PokemonSet> findByRank(Integer rank);
-
-    public List<PokemonSet> findByRankAndSpecies(Integer rank, String species);
-
-    public List<PokemonSet> findAll();
 }
