@@ -16,17 +16,17 @@ public class CustomSetController {
     private CustomSetService service;
 
     // Endpoints
-    @GetMapping(value = "/set/{name}")
+    @GetMapping(value = "/customSet/{name}")
     public CustomSet getCustomSetByName(@PathVariable String name) {
         return service.getSetByName(name);
     }
 
-    @GetMapping(value = "/allSets")
+    @GetMapping(value = "/allCustomSets")
     public Iterable<CustomSet> getAllCustomSets() {
         return service.getAll();
     }
 
-    @PostMapping(value = "/searchSets", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/searchCustomSets", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<CustomSet> searchCustomSets(@RequestBody(required = true) CustomSetSearchCriteria searchCriteria) {
         return service.searchCustomSets(searchCriteria);
     }

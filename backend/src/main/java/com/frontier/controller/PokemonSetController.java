@@ -23,17 +23,17 @@ public class PokemonSetController {
     private PokemonSetService service;
 
     // Endpoints
-    @GetMapping(value = "/set/{name}")
+    @GetMapping(value = "/pokemonSet/{name}")
     public PokemonSet getPokemonSetByName(@PathVariable String name) {
         return service.getSetByName(name);
     }
 
-    @GetMapping(value = "/allSets")
+    @GetMapping(value = "/allPokemonSets")
     public Iterable<PokemonSet> getAllPokemonSets() {
         return service.getAll();
     }
 
-    @PostMapping(value = "/searchSets", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/searchPokemonSets", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<PokemonSet> searchPokemonSets(
             @RequestBody(required = true) PokemonSetSearchCriteria searchCriteria) {
         return service.searchPokemonSets(searchCriteria);
