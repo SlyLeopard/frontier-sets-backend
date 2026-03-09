@@ -1,6 +1,5 @@
 package com.frontier.service;
 
-import org.springframework.data.domain.Page;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +12,7 @@ import com.frontier.service.base.BaseService;
 public class TrainerService extends BaseService<Trainer, TrainerRepository, TrainerSearchCriteria> {
 
     public TrainerService(TrainerRepository repo, MongoTemplate mongoTemplate) {
-        super(repo, mongoTemplate);
-    }
-
-    public Page<Trainer> search(TrainerSearchCriteria criteria) {
-        return super.search(criteria, Trainer.class);
+        super(repo, mongoTemplate, Trainer.class);
     }
 
 }

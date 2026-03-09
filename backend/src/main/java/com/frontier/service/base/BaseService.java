@@ -19,10 +19,12 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
 
     protected final R repo;
     protected final MongoTemplate mongoTemplate;
+    private final Class<T> entityClass;
 
-    protected BaseService(R repo, MongoTemplate mongoTemplate) {
+    protected BaseService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass) {
         this.repo = repo;
         this.mongoTemplate = mongoTemplate;
+        this.entityClass = entityClass;
     }
 
     public List<T> getAll() {
@@ -41,23 +43,23 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
         return repo.save(set);
     }
 
-    public T getByName(String name) {
+    public Optional<T> getByName(String name) {
         return repo.findByName(name);
     }
 
-    public Page<T> search(C criteria, Class<T> entity) {
+    public Page<T> search(C criteria) {
 
         Query query = criteria.toQuery();
 
         Pageable pageable = criteria.toPageable();
         query.with(pageable);
 
-        List<T> results = mongoTemplate.find(query, entity);
+        List<T> results = mongoTemplate.find(query, entityClass);
 
         return PageableExecutionUtils.getPage(
                 results,
                 pageable,
-                () -> mongoTemplate.count(query.skip(0).limit(0), entity));
+                () -> mongoTemplate.count(query.skip(0).limit(0), entityClass));
     }
 
 }

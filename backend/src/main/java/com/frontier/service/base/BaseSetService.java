@@ -1,6 +1,6 @@
 package com.frontier.service.base;
 
-import org.springframework.data.domain.Page;
+
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import com.frontier.model.base.AbstractSet;
@@ -12,13 +12,10 @@ public abstract class BaseSetService<T extends AbstractSet, R extends BaseReposi
 
     protected final R repo;
     protected final MongoTemplate mongoTemplate;
-    private final Class<T> entityClass;
-
     protected BaseSetService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass) {
-        super(repo, mongoTemplate);
+        super(repo, mongoTemplate, entityClass);
         this.repo = repo;
         this.mongoTemplate = mongoTemplate;
-        this.entityClass = entityClass;
     }
 
     public T save(T set) {
@@ -32,10 +29,6 @@ public abstract class BaseSetService<T extends AbstractSet, R extends BaseReposi
             throw new IllegalArgumentException("A set cannot have more than 4 moves");
         }
 
-    }
-
-    public Page<T> search(C criteria) {
-        return super.search(criteria, entityClass);
     }
 
 }
