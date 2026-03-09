@@ -13,7 +13,7 @@ public interface BaseRepository<T extends BaseEntity> extends MongoRepository<T,
 
     public Optional<T> findById(String id);
 
-    T findByName(String name);
+    public Optional<T> findByName(String name);
 
     public List<T> findAll();
     
