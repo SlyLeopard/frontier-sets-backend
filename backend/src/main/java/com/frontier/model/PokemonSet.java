@@ -2,6 +2,9 @@ package com.frontier.model;
 
 // Imports
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.frontier.model.base.Set;
+
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,5 +23,5 @@ public class PokemonSet extends Set {
     // Attributes
     private Integer rank;
     private Integer generation;
-    
+
 }
