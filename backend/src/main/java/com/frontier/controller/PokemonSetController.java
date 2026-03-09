@@ -34,7 +34,8 @@ public class PokemonSetController {
     }
 
     @PostMapping(value = "/searchSets", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<PokemonSet> searchPokemonSets(@RequestBody(required = true) PokemonSetSearchCriteria searchCriteria) {
+    public Iterable<PokemonSet> searchPokemonSets(
+            @RequestBody(required = true) PokemonSetSearchCriteria searchCriteria) {
         return service.searchPokemonSets(searchCriteria);
     }
 
