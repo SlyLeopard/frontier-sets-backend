@@ -3,7 +3,7 @@ package com.frontier.model;
 // Imports
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.frontier.model.base.Set;
+import com.frontier.model.base.AbstractSet;
 
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Document(collection = "pokemonSet")
 
 // Class
-public class PokemonSet extends Set {
+public class PokemonSet extends AbstractSet {
 
     // Attributes
     private Integer rank;

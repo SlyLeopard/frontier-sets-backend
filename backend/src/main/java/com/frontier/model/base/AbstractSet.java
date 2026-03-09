@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Set {
+public abstract class AbstractSet {
 
     @Id
     private String id;
