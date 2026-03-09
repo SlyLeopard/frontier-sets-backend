@@ -12,7 +12,6 @@ import com.frontier.service.base.BaseSetService;
 @Service
 public class PokemonSetService extends BaseSetService<PokemonSet> {
 
-
     @Autowired
     private final PokemonSetRepository pokemonSetRepo;
 

@@ -1,5 +1,7 @@
 package com.frontier.controller;
 
+// Imports
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import com.frontier.service.CustomSetService;
 public class CustomSetController {
 
     // Attributes
+    @Autowired
     private CustomSetService service;
 
     // Endpoints
