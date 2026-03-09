@@ -1,16 +1,18 @@
 package com.frontier.repository;
 
+// Imports
+import org.springframework.stereotype.Repository;
+import com.frontier.model.CustomSet;
+import com.frontier.repository.base.BaseSetRepository;
 import java.util.List;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.frontier.model.CustomSet;
+// Annotations
+@Repository
 
-public interface CustomSetRepository extends MongoRepository<CustomSet, String> {
-    
-    // Methods
-    public CustomSet findByName(String name);
+// Class
+public interface CustomSetRepository extends BaseSetRepository<CustomSet> {
 
-    public List<CustomSet> findBySpecies(String species);
+    List<CustomSet> findByIv(Integer[] iv);
 
 }

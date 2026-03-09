@@ -1,25 +1,17 @@
 package com.frontier.repository;
 
-import java.util.List;
-import java.util.Optional;
-
 // Imports
-import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import com.frontier.model.Pokemon;
+import com.frontier.repository.base.BaseRepository;
 
 // Annotations
 @Repository
 
 // Class
-public interface PokemonRepository extends MongoRepository<Pokemon, String> {
+public interface PokemonRepository extends BaseRepository<Pokemon> {
 
     // Methods
-    public Optional<Pokemon> findById(String id);
-    
     public Pokemon findByDex(Integer dex);
 
-    public Pokemon findByName(String name);
-
-    public List<Pokemon> findAll();
 }
