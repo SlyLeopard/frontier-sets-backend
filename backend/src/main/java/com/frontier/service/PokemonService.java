@@ -9,16 +9,16 @@ import com.frontier.repository.PokemonRepository;
 @Service
 public class PokemonService {
 
-        // Attributes
+    // Attributes
     @Autowired
-    private PokemonRepository pokemonRepository;
+    private PokemonRepository pokemonRepo;
 
     public Pokemon getPokemonByName(String name) {
-        return pokemonRepository.findByName(name);
+        return pokemonRepo.findByName(name);
     }
 
     public Iterable<Pokemon> getPokemon() {
-        return pokemonRepository.findAll();
+        return pokemonRepo.findAll();
     }
-    
+
 }

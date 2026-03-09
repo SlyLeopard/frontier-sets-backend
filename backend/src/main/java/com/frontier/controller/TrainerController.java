@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.frontier.model.Trainer;
 import com.frontier.repository.TrainerRepository;
+import com.frontier.service.TrainerService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 // Annotations
@@ -15,18 +17,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class TrainerController {
 
     // Attributes
-    @Autowired
-    private TrainerRepository trainerRepository;
+    private TrainerService service;
 
     // Endpoints
-    @GetMapping("/trainer/{name}")
+    @GetMapping(value = "/trainer/{name}")
     public Trainer getTrainer(@PathVariable String name) {
-        return trainerRepository.findByName(name);
+        return service.getTrainer(name);
     }
 
-    @GetMapping("/trainers")
+    @GetMapping(value = "/trainers")
     public Iterable<Trainer> getAllTrainers() {
-        return trainerRepository.findAll();
+        return service.getAllTrainers();
     }
-    
+
 }
