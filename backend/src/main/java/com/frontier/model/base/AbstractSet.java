@@ -2,24 +2,20 @@ package com.frontier.model.base;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-
 import com.frontier.enums.Nature;
 import com.frontier.enums.Stat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class AbstractSet {
-
-    @Id
-    private String id;
-
-    private String name;
+public abstract class AbstractSet extends BaseEntity {
+    
     private String species;
     private Integer[] ev;
     private List<String> moves;

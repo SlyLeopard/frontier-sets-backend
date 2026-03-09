@@ -1,10 +1,8 @@
 package com.frontier.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.frontier.enums.Stat;
 import com.frontier.model.base.AbstractSet;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
