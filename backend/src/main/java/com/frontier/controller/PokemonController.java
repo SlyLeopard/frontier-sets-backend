@@ -1,13 +1,12 @@
 package com.frontier.controller;
 
 // Imports
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.frontier.model.Pokemon;
-import com.frontier.repository.PokemonRepository;
+import com.frontier.service.PokemonService;
 
 // Annotations
 @RestController
@@ -16,18 +15,17 @@ import com.frontier.repository.PokemonRepository;
 public class PokemonController {
 
     // Attributes
-    @Autowired
-    private PokemonRepository pokemonRepository;
+    private PokemonService service;
 
     // Endpoints
-    @GetMapping("/pokemon/{name}")
-    public Pokemon getMethodName(@PathVariable String name) {
-        return pokemonRepository.findByName(name);
+    @GetMapping(value = "/pokemon/{name}")
+    public Pokemon getPokemonByName(@PathVariable String name) {
+        return service.getPokemonByName(name);
     }
 
-    @GetMapping("/allPokemon")
+    @GetMapping(value = "/allPokemon")
     public Iterable<Pokemon> getPokemon() {
-        return pokemonRepository.findAll();
+        return service.getPokemon();
     }
 
 }
