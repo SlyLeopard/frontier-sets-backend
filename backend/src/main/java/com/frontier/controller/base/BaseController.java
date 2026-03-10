@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.frontier.model.base.BaseEntity;
 import com.frontier.search.base.BaseSearchCriteria;
@@ -41,7 +42,14 @@ public abstract class BaseController<T extends BaseEntity, C extends BaseSearchC
     }
 
     @PostMapping("/search")
-    public ResponseEntity<Page<T>> search(@RequestBody(required = true) C criteria) {
+    public ResponseEntity<Page<T>> search(@RequestBody(required = true) C criteria,
+            @RequestParam(required = false) Integer page, 
+            @RequestParam(required = false) Integer pageSize) {
+        page = page == null ? 0 : page;
+        pageSize = pageSize == null ? 20 : pageSize;
+        pageSize = pageSize > 100 ? 100 : pageSize;
+        criteria.setPage(page);
+        criteria.setSize(pageSize);
         Page<T> results = service.search(criteria);
         return ResponseEntity.ok(results);
     }
