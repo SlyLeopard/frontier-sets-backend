@@ -15,7 +15,7 @@ import com.frontier.repository.base.BaseRepository;
 import com.frontier.search.base.BaseSearchCriteria;
 
 @Service
-public abstract class BaseService<T extends BaseEntity, R extends BaseRepository<T>, C extends BaseSearchCriteria> {
+public abstract class BaseService<T extends BaseEntity, R extends BaseRepository<T>, C extends BaseSearchCriteria, D> {
 
     protected final R repo;
     protected final MongoTemplate mongoTemplate;
@@ -58,6 +58,9 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
                 results,
                 pageable,
                 () -> mongoTemplate.count(query.skip(0).limit(0), entityClass));
+
     }
+
+    protected abstract D toDTO(T entity);
 
 }

@@ -8,7 +8,7 @@ import com.frontier.repository.base.BaseRepository;
 import com.frontier.search.base.BaseSetSearchCriteria;
 
 @Service
-public abstract class BaseSetService<T extends AbstractSet, R extends BaseRepository<T>, C extends BaseSetSearchCriteria> extends BaseService<T, R, C> {
+public abstract class BaseSetService<T extends AbstractSet, R extends BaseRepository<T>, C extends BaseSetSearchCriteria, D> extends BaseService<T, R, C, D> {
 
     protected final R repo;
     protected final MongoTemplate mongoTemplate;
