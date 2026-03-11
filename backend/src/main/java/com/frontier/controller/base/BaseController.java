@@ -23,19 +23,20 @@ public abstract class BaseController<T extends BaseEntity, C extends BaseSearchC
     }
 
     @GetMapping
-    public List<T> getAll() {
+    public List<D> getAll(@RequestParam(required = false) Integer page, 
+            @RequestParam(required = false) Integer pageSize) {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<T> getById(@PathVariable String id) {
+    public ResponseEntity<D> getById(@PathVariable String id) {
         return service.getById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/name/{name}")
-    public ResponseEntity<T> getByName(@PathVariable String name) {
+    public ResponseEntity<D> getByName(@PathVariable String name) {
         return service.getByName(name)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

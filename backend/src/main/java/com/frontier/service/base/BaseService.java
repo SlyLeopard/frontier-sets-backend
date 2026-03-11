@@ -30,12 +30,15 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
         this.mapper = mapper;
     }
 
-    public List<T> getAll() {
-        return repo.findAll();
+    public List<D> getAll() {
+        return repo.findAll()
+                .stream()
+                .map(mapper)
+                .toList();
     }
 
-    public Optional<T> getById(String id) {
-        return repo.findById(id);
+    public Optional<D> getById(String id) {
+        return repo.findById(id).map(mapper);
     }
 
     public void delete(String id) {
@@ -46,8 +49,8 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
         return repo.save(set);
     }
 
-    public Optional<T> getByName(String name) {
-        return repo.findByName(name);
+    public Optional<D> getByName(String name) {
+        return repo.findByName(name).map(mapper);
     }
 
     public Page<D> search(C criteria) {
@@ -57,10 +60,10 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
         query.with(pageable);
 
         List<D> results = mongoTemplate
-            .find(query, entityClass)
-            .stream()
-            .map(mapper)
-            .toList();
+                .find(query, entityClass)
+                .stream()
+                .map(mapper)
+                .toList();
 
         return PageableExecutionUtils.getPage(
                 results,

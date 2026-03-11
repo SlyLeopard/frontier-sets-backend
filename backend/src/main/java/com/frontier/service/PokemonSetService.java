@@ -2,7 +2,6 @@ package com.frontier.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,10 +10,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.support.PageableExecutionUtils;
 import org.springframework.stereotype.Service;
 
-import com.frontier.model.Pokemon;
 import com.frontier.model.PokemonSet;
 import com.frontier.model.dto.CombinedPokemonSetDTO;
-import com.frontier.model.dto.PokemonDTO;
 import com.frontier.model.dto.PokemonSetDTO;
 import com.frontier.repository.PokemonSetRepository;
 import com.frontier.search.PokemonSetSearchCriteria;
@@ -48,10 +45,9 @@ public class PokemonSetService extends BaseSetService<PokemonSet, PokemonSetRepo
 
     public CombinedPokemonSetDTO toCombinedDTO(PokemonSet set) {
         CombinedPokemonSetDTO dto = new CombinedPokemonSetDTO();
-        Optional<Pokemon> optional = pokemonService.getByName(set.getSpecies());
         dto.setName(set.getName());
         dto.setSpecies(set.getSpecies());
-        dto.setPokemon(PokemonDTO.fromEntity(optional.orElse(null)));
+        dto.setPokemon(pokemonService.getByName(set.getSpecies()).orElse(null));
         dto.setNature(set.getNature());
         dto.setItem(set.getItem());
         dto.setEv(set.getEv());
