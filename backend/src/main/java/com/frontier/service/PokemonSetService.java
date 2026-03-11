@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.frontier.model.Pokemon;
 import com.frontier.model.PokemonSet;
 import com.frontier.model.dto.CombinedPokemonSetDTO;
+import com.frontier.model.dto.PokemonDTO;
 import com.frontier.model.dto.PokemonSetDTO;
 import com.frontier.repository.PokemonSetRepository;
 import com.frontier.search.PokemonSetSearchCriteria;
@@ -25,7 +26,7 @@ public class PokemonSetService extends BaseSetService<PokemonSet, PokemonSetRepo
     private PokemonService pokemonService;
 
     public PokemonSetService(PokemonSetRepository repo, MongoTemplate mongoTemplate, PokemonService pokemonService) {
-        super(repo, mongoTemplate, PokemonSet.class);
+        super(repo, mongoTemplate, PokemonSet.class, PokemonSetDTO::fromEntity);
         this.pokemonService = pokemonService;
     }
 
@@ -45,25 +46,12 @@ public class PokemonSetService extends BaseSetService<PokemonSet, PokemonSetRepo
                 () -> mongoTemplate.count(query.skip(0).limit(0), PokemonSet.class));
     }
 
-    public PokemonSetDTO toDTO(PokemonSet set) {
-        PokemonSetDTO dto = new PokemonSetDTO();
-        dto.setName(set.getName());
-        dto.setSpecies(set.getSpecies());
-        dto.setNature(set.getNature());
-        dto.setItem(set.getItem());
-        dto.setEv(set.getEv());
-        dto.setMoves(set.getMoves());
-        dto.setRank(set.getRank());
-        dto.setGeneration(set.getGeneration());
-        return dto;
-    }
-
     public CombinedPokemonSetDTO toCombinedDTO(PokemonSet set) {
         CombinedPokemonSetDTO dto = new CombinedPokemonSetDTO();
         Optional<Pokemon> optional = pokemonService.getByName(set.getSpecies());
         dto.setName(set.getName());
         dto.setSpecies(set.getSpecies());
-        dto.setPokemon(pokemonService.toDTO(optional.orElse(null)));
+        dto.setPokemon(PokemonDTO.fromEntity(optional.orElse(null)));
         dto.setNature(set.getNature());
         dto.setItem(set.getItem());
         dto.setEv(set.getEv());

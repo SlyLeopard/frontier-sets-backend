@@ -2,6 +2,7 @@ package com.frontier.service.base;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,11 +21,13 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
     protected final R repo;
     protected final MongoTemplate mongoTemplate;
     private final Class<T> entityClass;
+    private final Function<T, D> mapper;
 
-    protected BaseService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass) {
+    protected BaseService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass, Function<T, D> mapper) {
         this.repo = repo;
         this.mongoTemplate = mongoTemplate;
         this.entityClass = entityClass;
+        this.mapper = mapper;
     }
 
     public List<T> getAll() {
@@ -47,12 +50,17 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
         return repo.findByName(name);
     }
 
-    public Page<T> search(C criteria) {
+    public Page<D> search(C criteria) {
 
         Query query = criteria.toQuery();
         Pageable pageable = criteria.toPageable();
         query.with(pageable);
-        List<T> results = mongoTemplate.find(query, entityClass);
+
+        List<D> results = mongoTemplate
+            .find(query, entityClass)
+            .stream()
+            .map(mapper)
+            .toList();
 
         return PageableExecutionUtils.getPage(
                 results,
@@ -60,7 +68,5 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
                 () -> mongoTemplate.count(query.skip(0).limit(0), entityClass));
 
     }
-
-    protected abstract D toDTO(T entity);
 
 }

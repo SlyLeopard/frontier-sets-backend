@@ -13,17 +13,7 @@ import com.frontier.service.base.BaseService;
 public class PokemonService extends BaseService<Pokemon, PokemonRepository, PokemonSearchCriteria, PokemonDTO> {
 
     public PokemonService(PokemonRepository repo, MongoTemplate mongoTemplate) {
-        super(repo, mongoTemplate, Pokemon.class);
-    }
-
-    public PokemonDTO toDTO(Pokemon pokemon) {
-        PokemonDTO dto = new PokemonDTO();
-        dto.setName(pokemon.getName());
-        dto.setDex(pokemon.getDex());
-        dto.setStats(pokemon.getStats());
-        dto.setAbilities(pokemon.getAbilities());
-        dto.setType(pokemon.getType());
-        return dto;
+        super(repo, mongoTemplate, Pokemon.class, PokemonDTO::fromEntity);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.frontier.service.base;
 
+import java.util.function.Function;
+
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,13 @@ public abstract class BaseSetService<T extends AbstractSet, R extends BaseReposi
 
     protected final R repo;
     protected final MongoTemplate mongoTemplate;
-    protected BaseSetService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass) {
-        super(repo, mongoTemplate, entityClass);
+    protected final Function<T, D> mapper;
+
+    protected BaseSetService(R repo, MongoTemplate mongoTemplate, Class<T> entityClass, Function<T, D> mapper) {
+        super(repo, mongoTemplate, entityClass, mapper);
         this.repo = repo;
         this.mongoTemplate = mongoTemplate;
+        this.mapper = mapper;
     }
 
     public T save(T set) {

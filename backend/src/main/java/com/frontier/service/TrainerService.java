@@ -13,15 +13,7 @@ import com.frontier.service.base.BaseService;
 public class TrainerService extends BaseService<Trainer, TrainerRepository, TrainerSearchCriteria, TrainerDTO> {
 
     public TrainerService(TrainerRepository repo, MongoTemplate mongoTemplate) {
-        super(repo, mongoTemplate, Trainer.class);
-    }
-
-        public TrainerDTO toDTO(Trainer trainer) {
-        TrainerDTO dto = new TrainerDTO();
-        dto.setName(trainer.getName());
-        dto.setTrainerClass(trainer.getTrainerClass());
-        dto.setRank(trainer.getRank());
-        return dto;
+        super(repo, mongoTemplate, Trainer.class, TrainerDTO::fromEntity);
     }
 
 }
