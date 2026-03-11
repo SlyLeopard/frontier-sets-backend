@@ -2,12 +2,23 @@ package com.frontier.model.dto;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.frontier.enums.Nature;
 import com.frontier.model.PokemonSet;
 
 import lombok.Data;
 
 @Data
+@JsonPropertyOrder({
+    "name",
+    "species",
+    "nature",
+    "item",
+    "moves",
+    "ev",
+    "rank",
+    "generation"
+})
 public class PokemonSetDTO {
 
     private String name;
