@@ -1,7 +1,5 @@
 package com.frontier.controller.base;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +21,13 @@ public abstract class BaseController<T extends BaseEntity, C extends BaseSearchC
     }
 
     @GetMapping
-    public List<D> getAll(@RequestParam(required = false) Integer page, 
+    public ResponseEntity<Page<D>> getAll(@RequestParam(required = false) Integer page,
             @RequestParam(required = false) Integer pageSize) {
-        return service.getAll();
+        page = page == null ? 0 : page;
+        pageSize = pageSize == null ? 20 : pageSize;
+        pageSize = pageSize > 100 ? 100 : pageSize;
+        Page<D> results = service.getAll(page, pageSize);
+        return ResponseEntity.ok(results);
     }
 
     @GetMapping("/{id}")
@@ -44,7 +46,7 @@ public abstract class BaseController<T extends BaseEntity, C extends BaseSearchC
 
     @PostMapping("/search")
     public ResponseEntity<Page<D>> search(@RequestBody(required = true) C criteria,
-            @RequestParam(required = false) Integer page, 
+            @RequestParam(required = false) Integer page,
             @RequestParam(required = false) Integer pageSize) {
         page = page == null ? 0 : page;
         pageSize = pageSize == null ? 20 : pageSize;

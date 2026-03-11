@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.function.Function;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
@@ -30,11 +31,9 @@ public abstract class BaseService<T extends BaseEntity, R extends BaseRepository
         this.mapper = mapper;
     }
 
-    public List<D> getAll() {
-        return repo.findAll()
-                .stream()
-                .map(mapper)
-                .toList();
+    public Page<D> getAll(Integer page, Integer pageSize) {
+        Pageable pageable = PageRequest.of(page, pageSize);
+        return repo.findAll(pageable).map(mapper);
     }
 
     public Optional<D> getById(String id) {
