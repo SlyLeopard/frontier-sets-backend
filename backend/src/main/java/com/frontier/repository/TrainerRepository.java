@@ -12,6 +12,6 @@ public interface TrainerRepository extends BaseRepository<Trainer> {
 
     public Integer findRankByName(String name);
 
-    public List<Trainer> findByTrainerClass(String trainerClass);
+    public List<Trainer> findByJob(String job);
 
 }

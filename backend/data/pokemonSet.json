@@ -19,8 +19,7 @@
         "nature": "Modest",
         "item": "BrightPowder",
         "rank": 1,
-        "generation": 4,
-        "isCustom": false
+        "generation": 4
     },
     {
         "name": "Charmander 1",
@@ -42,8 +41,7 @@
         "nature": "Adamant",
         "item": "Scope Lens",
         "generation": 4,
-        "rank": 1,
-        "isCustom": false
+        "rank": 1
     },
     {
         "name": "Squirtle 1",
@@ -65,7 +63,6 @@
         "nature": "Adamant",
         "item": "Sea Incense",
         "rank": 1,
-        "generation": 4,
-        "isCustom": false
+        "generation": 4
     }
 ]

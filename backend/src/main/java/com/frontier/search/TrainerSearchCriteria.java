@@ -12,14 +12,14 @@ import lombok.EqualsAndHashCode;
 public class TrainerSearchCriteria extends BaseSearchCriteria {
 
     private Integer rank;
-    private String trainerClass;
+    private String job;
 
     @Override
     public Query toQuery() {
 
         Query query = new Query();
         addIfPresent(query, "rank", rank);
-        addIfPresent(query, "trainerClass", trainerClass);
+        addIfPresent(query, "job", job);
         addBaseCriteria(query);
         return query;
         

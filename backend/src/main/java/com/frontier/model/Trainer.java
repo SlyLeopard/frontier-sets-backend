@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
 @Document(collection = "trainer")
 public class Trainer extends BaseEntity {
 
-    private String trainerClass;
+    private String job;
     private Integer rank;
 
 }
