@@ -3,6 +3,7 @@ package com.frontier.model.dto;
 import java.util.List;
 
 import com.frontier.enums.PokemonType;
+import com.frontier.model.Pokemon;
 
 import lombok.Data;
 
@@ -14,5 +15,15 @@ public class PokemonDTO {
     private Integer[] stats;
     private List<PokemonType> type;
     private List<String> abilities;
+
+    public static PokemonDTO fromEntity(Pokemon pokemon) {
+        PokemonDTO dto = new PokemonDTO();
+        dto.setName(pokemon.getName());
+        dto.setDex(pokemon.getDex());
+        dto.setStats(pokemon.getStats());
+        dto.setAbilities(pokemon.getAbilities());
+        dto.setType(pokemon.getType());
+        return dto;
+    }
 
 }
