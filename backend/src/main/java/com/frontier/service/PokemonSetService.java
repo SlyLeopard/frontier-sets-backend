@@ -35,28 +35,12 @@ public class PokemonSetService extends BaseSetService<PokemonSet, PokemonSetRepo
         List<PokemonSet> results = mongoTemplate.find(query, PokemonSet.class);
         List<CombinedPokemonSetDTO> combinedResults = new ArrayList<CombinedPokemonSetDTO>();
         for (PokemonSet set : results) {
-            combinedResults.add(toCombinedDTO(set));
+            combinedResults.add(CombinedPokemonSetDTO.fromEntity(set, pokemonService.getByName(set.getSpecies()).orElse(null)));
         }
         return PageableExecutionUtils.getPage(
                 combinedResults,
                 pageable,
                 () -> mongoTemplate.count(query.skip(0).limit(0), PokemonSet.class));
     }
-
-    public CombinedPokemonSetDTO toCombinedDTO(PokemonSet set) {
-        CombinedPokemonSetDTO dto = new CombinedPokemonSetDTO();
-        dto.setName(set.getName());
-        dto.setSpecies(set.getSpecies());
-        dto.setPokemon(pokemonService.getByName(set.getSpecies()).orElse(null));
-        dto.setNature(set.getNature());
-        dto.setItem(set.getItem());
-        dto.setEv(set.getEv());
-        dto.setMoves(set.getMoves());
-        dto.setRank(set.getRank());
-        dto.setGeneration(set.getGeneration());
-        return dto;
-    }
-
-
 
 }
