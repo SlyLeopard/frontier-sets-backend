@@ -14,11 +14,11 @@ import com.frontier.model.base.BaseEntity;
 import com.frontier.search.base.BaseSearchCriteria;
 import com.frontier.service.base.BaseService;
 
-public abstract class BaseController<T extends BaseEntity, C extends BaseSearchCriteria> {
+public abstract class BaseController<T extends BaseEntity, C extends BaseSearchCriteria, D> {
 
-    protected final BaseService<T, ?, C> service;
+    protected final BaseService<T, ?, C, D> service;
 
-    protected BaseController(BaseService<T, ?, C> service) {
+    protected BaseController(BaseService<T, ?, C, D> service) {
         this.service = service;
     }
 

@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.frontier.controller.base.BaseController;
 import com.frontier.model.Pokemon;
+import com.frontier.model.dto.PokemonDTO;
 import com.frontier.search.PokemonSearchCriteria;
 import com.frontier.service.PokemonService;
 
 @RestController
 @RequestMapping("/pokemon")
-public class PokemonController extends BaseController<Pokemon, PokemonSearchCriteria> {
+public class PokemonController extends BaseController<Pokemon, PokemonSearchCriteria, PokemonDTO> {
 
     public PokemonController(PokemonService service) {
         super(service);
