@@ -36,7 +36,7 @@ public class PokemonSetService
         Pageable pageable = criteria.toPageable();
         query.with(pageable);
         List<PokemonSet> sets = mongoTemplate.find(query, PokemonSet.class);
-        Set<String> pokemonNames = sets.stream().map(PokemonSet::getName).collect(Collectors.toSet());
+        Set<String> pokemonNames = sets.stream().map(PokemonSet::getSpecies).collect(Collectors.toSet());
 
         Query pokemonNameQuery = new Query(
                 Criteria.where("name").in(pokemonNames));
