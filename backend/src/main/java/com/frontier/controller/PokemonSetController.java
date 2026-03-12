@@ -2,11 +2,11 @@ package com.frontier.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.frontier.controller.base.BaseController;
 import com.frontier.model.PokemonSet;
@@ -27,17 +27,10 @@ public class PokemonSetController extends BaseController<PokemonSet, PokemonSetS
         this.service = service;
     }
 
-    @PostMapping("/v1/search")
+    @PostMapping("/combinedSearch")
     public ResponseEntity<Page<CombinedPokemonSetDTO>> combinedSearch(
-            PokemonSetSearchCriteria criteria,
-            @RequestParam(required = false) Integer page,
-            @RequestParam(required = false) Integer pageSize) {
-        page = page == null ? 0 : page;
-        pageSize = pageSize == null ? 20 : pageSize;
-        pageSize = pageSize > 100 ? 100 : pageSize;
-        criteria.setPage(page);
-        criteria.setSize(pageSize);
-        Page<CombinedPokemonSetDTO> results = service.combinedSearch(criteria);
+            PokemonSetSearchCriteria criteria, Pageable pageable) {
+        Page<CombinedPokemonSetDTO> results = service.combinedSearch(criteria, pageable);
         return ResponseEntity.ok(results);
     }
 

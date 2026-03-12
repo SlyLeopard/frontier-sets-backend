@@ -30,10 +30,9 @@ public class PokemonSetService
         super(repo, mongoTemplate, PokemonSet.class, PokemonSetDTO::fromEntity);
     }
 
-    public Page<CombinedPokemonSetDTO> combinedSearch(PokemonSetSearchCriteria criteria) {
+    public Page<CombinedPokemonSetDTO> combinedSearch(PokemonSetSearchCriteria criteria, Pageable pageable) {
 
         Query query = criteria.toQuery();
-        Pageable pageable = criteria.toPageable();
         query.with(pageable);
         List<PokemonSet> sets = mongoTemplate.find(query, PokemonSet.class);
         Set<String> pokemonNames = sets.stream().map(PokemonSet::getSpecies).collect(Collectors.toSet());
@@ -49,7 +48,7 @@ public class PokemonSetService
 
         List<CombinedPokemonSetDTO> combined = sets.stream()
                 .map(set -> {
-                    PokemonDTO pokemon = pokemonNameMap.get(set.getName());
+                    PokemonDTO pokemon = pokemonNameMap.get(set.getSpecies());
                     return CombinedPokemonSetDTO.fromEntity(
                             set,
                             pokemon);
