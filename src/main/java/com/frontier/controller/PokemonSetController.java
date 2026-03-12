@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,7 +14,6 @@ import com.frontier.model.dto.PokemonSetDTO;
 import com.frontier.search.PokemonSetSearchCriteria;
 import com.frontier.service.PokemonSetService;
 
-@CrossOrigin(origins = "${app.frontend.url}")
 @RestController
 @RequestMapping("/pokemon-set")
 public class PokemonSetController extends BaseController<PokemonSet, PokemonSetSearchCriteria, PokemonSetDTO> {
