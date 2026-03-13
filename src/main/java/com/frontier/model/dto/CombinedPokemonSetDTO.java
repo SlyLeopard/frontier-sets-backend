@@ -17,6 +17,10 @@ import lombok.Data;
     "item",
     "moves",
     "ev",
+    "ivDefault",
+    "ivFactory",
+    "finalStatsDefault",
+    "finalStatsFactory",
     "rank",
     "generation"
 })
@@ -26,6 +30,10 @@ public class CombinedPokemonSetDTO {
     private String species;
     private PokemonDTO pokemon;
     private Integer[] ev;
+    private Integer[] ivDefault;
+    private Integer[] ivFactory;
+    private Integer[] finalStatsDefault;
+    private Integer[] finalStatsFactory;
     private List<String> moves;
     private Nature nature;
     private String item;
