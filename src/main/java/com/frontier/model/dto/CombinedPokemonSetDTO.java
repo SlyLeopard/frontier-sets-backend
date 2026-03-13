@@ -5,6 +5,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.frontier.enums.Nature;
 import com.frontier.model.PokemonSet;
+import com.frontier.utils.StatsHelper;
 
 import lombok.Data;
 
@@ -48,6 +49,10 @@ public class CombinedPokemonSetDTO {
         dto.setNature(set.getNature());
         dto.setItem(set.getItem());
         dto.setEv(set.getEv());
+        dto.setIvDefault(StatsHelper.getIvs(set.getRank(), false));
+        dto.setIvFactory(StatsHelper.getIvs(set.getRank(), true));
+        dto.setFinalStatsDefault(StatsHelper.getStats(dto.getPokemon().getStats(), dto.getEv(), dto.getIvDefault(), dto.getNature()));
+        dto.setFinalStatsFactory(StatsHelper.getStats(dto.getPokemon().getStats(), dto.getEv(), dto.getIvFactory(), dto.getNature()));
         dto.setMoves(set.getMoves());
         dto.setRank(set.getRank());
         dto.setGeneration(set.getGeneration());

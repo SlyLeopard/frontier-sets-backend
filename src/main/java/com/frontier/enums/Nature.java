@@ -47,4 +47,12 @@ public enum Nature {
     public Stat getDrop() {
         return drop;
     }
+
+    public Double getModifier(Stat stat) {
+        if(stat == this.boost) {
+            return 1.1;
+        } else if(stat == this.drop) {
+            return 0.9;
+        } else return 1.0;
+    }
 }
