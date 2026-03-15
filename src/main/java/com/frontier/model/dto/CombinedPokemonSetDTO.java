@@ -22,6 +22,7 @@ import lombok.Data;
     "ivFactory",
     "finalStatsDefault",
     "finalStatsFactory",
+    "iconUrl",
     "rank",
     "generation"
 })
@@ -38,6 +39,7 @@ public class CombinedPokemonSetDTO {
     private List<String> moves;
     private Nature nature;
     private String item;
+    private String iconUrl;
     private Integer rank;
     private Integer generation;
 
@@ -54,6 +56,7 @@ public class CombinedPokemonSetDTO {
         dto.setFinalStatsDefault(StatsHelper.getStats(dto.getPokemon().getStats(), dto.getEv(), dto.getIvDefault(), dto.getNature()));
         dto.setFinalStatsFactory(StatsHelper.getStats(dto.getPokemon().getStats(), dto.getEv(), dto.getIvFactory(), dto.getNature()));
         dto.setMoves(set.getMoves());
+        dto.setIconUrl(String.format("https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/%s.png", dto.getSpecies().toLowerCase()));
         dto.setRank(set.getRank());
         dto.setGeneration(set.getGeneration());
         return dto;
