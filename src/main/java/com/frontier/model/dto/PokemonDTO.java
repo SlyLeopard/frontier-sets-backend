@@ -19,8 +19,8 @@ import lombok.Data;
 public class PokemonDTO {
     
     private String name;
-    private Integer dex;
-    private Integer[] stats;
+    private int dex;
+    private int[] stats;
     private List<PokemonType> type;
     private List<String> abilities;
 

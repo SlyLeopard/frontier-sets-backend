@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Document(collection = "customSet")
 public class CustomSet extends AbstractSet {
 
-    private Integer[] iv;
+    private int[] iv;
 
     public int getIV(Stat stat) {
         return iv[stat.index()];

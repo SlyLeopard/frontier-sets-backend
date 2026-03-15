@@ -20,8 +20,8 @@ import lombok.EqualsAndHashCode;
 @Document(collection = "pokemon")
 public class Pokemon extends BaseEntity {
 
-    private Integer dex;
-    private Integer[] stats;
+    private int dex;
+    private int[] stats;
     private List<PokemonType> type;
     private List<String> abilities;
 

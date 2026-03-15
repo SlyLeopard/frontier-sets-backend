@@ -15,7 +15,7 @@ public class TrainerDTO {
 
     private String name;
     private String job;
-    private Integer rank;
+    private int rank;
 
     public static TrainerDTO fromEntity(Trainer trainer) {
         TrainerDTO dto = new TrainerDTO();

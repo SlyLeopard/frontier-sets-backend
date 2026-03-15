@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Document(collection = "pokemonSet")
 public class PokemonSet extends AbstractSet {
 
-    private Integer rank;
-    private Integer generation;
+    private int rank;
+    private int generation;
 
 }

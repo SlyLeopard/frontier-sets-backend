@@ -31,17 +31,17 @@ public class CombinedPokemonSetDTO {
     private String name;
     private String species;
     private PokemonDTO pokemon;
-    private Integer[] ev;
-    private Integer[] ivDefault;
-    private Integer[] ivFactory;
-    private Integer[] finalStatsDefault;
-    private Integer[] finalStatsFactory;
+    private int[] ev;
+    private int[] ivDefault;
+    private int[] ivFactory;
+    private int[] finalStatsDefault;
+    private int[] finalStatsFactory;
     private List<String> moves;
     private Nature nature;
     private String item;
     private String iconUrl;
-    private Integer rank;
-    private Integer generation;
+    private int rank;
+    private int generation;
 
     public static CombinedPokemonSetDTO fromEntity(PokemonSet set, PokemonDTO pokemon) {
         CombinedPokemonSetDTO dto = new CombinedPokemonSetDTO();

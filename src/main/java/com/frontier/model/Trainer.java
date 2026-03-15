@@ -17,6 +17,6 @@ import lombok.AllArgsConstructor;
 public class Trainer extends BaseEntity {
 
     private String job;
-    private Integer rank;
+    private int rank;
 
 }

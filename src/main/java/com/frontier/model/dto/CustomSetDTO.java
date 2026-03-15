@@ -22,8 +22,8 @@ public class CustomSetDTO {
 
     private String name;
     private String species;
-    private Integer[] ev;
-    private Integer[] iv;
+    private int[] ev;
+    private int[] iv;
     private List<String> moves;
     private Nature nature;
     private String item;

@@ -23,12 +23,12 @@ public class PokemonSetDTO {
 
     private String name;
     private String species;
-    private Integer[] ev;
+    private int[] ev;
     private List<String> moves;
     private Nature nature;
     private String item;
-    private Integer rank;
-    private Integer generation;
+    private int rank;
+    private int generation;
 
     public static PokemonSetDTO fromEntity(PokemonSet set) {
         PokemonSetDTO dto = new PokemonSetDTO();
